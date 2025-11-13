@@ -1,0 +1,190 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+ul {
+  list-style: none;
+}
+
+@font-face {
+  font-family: "WanjuDaedunsan";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/TTWanjudaedunsancheB.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+body {
+  /* background-color: #f7f3e8; */
+  width: 100%;
+  background-image: url(img/visual1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: "WanjuDaedunsan";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.wrap {
+  /* 중앙 정렬을 위한 래퍼. 필요에 따라 그림자 추가 */
+  padding: 20px;
+}
+
+#container {
+  /* 주요 컨테이너: 둥근 모서리와 따뜻한 색감 */
+  width: 100%;
+  background-color: #fffaf0; /* 흰색보다는 따뜻한 미색 */
+  border: 10px solid #b7e0b5; /* 연두색/풀색 테두리 */
+  border-radius: 20px; /* 매우 둥근 모서리 */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
+  padding: 25px 50px 300px;
+}
+
+h1 {
+  /* 제목 디자인 */
+  color: #4a6a3b; /* 짙은 녹색 */
+  text-align: center;
+  font-size: 3em;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  border-bottom: 2px dashed #b7e0b5; /* 귀여운 점선 구분선 */
+}
+
+/* -------------------------------------------------------------------------- */
+/* 2. 입력 섹션 (오늘의 할일) */
+/* -------------------------------------------------------------------------- */
+section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+label {
+  color: #8b6e4d; /* 나무색/갈색 */
+  font-weight: bold;
+  white-space: nowrap; /* 줄바꿈 방지 */
+}
+
+#user {
+  /* 입력 필드 디자인: 부드러운 둥근 모서리 */
+  flex-grow: 1;
+  padding: 10px 15px;
+  border: 2px solid #a8c17b; /* 연한 초록색 테두리 */
+  border-radius: 15px; /* 둥글게 */
+  font-size: 1em;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+#user:focus {
+  border-color: #6a8c43; /* 포커스 시 색상 변경 */
+}
+
+#add {
+  /* 추가 버튼 디자인: 둥글고 귀여운 버튼 */
+  width: 40px;
+  height: 40px;
+  background-color: #ffb6c1; /* 연분홍 (꽃잎색) */
+  color: white;
+  border: none;
+  border-radius: 50%; /* 완전한 원 */
+  font-size: 1.5em;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+#add:hover {
+  background-color: #ff99aa;
+  transform: translateY(-1px); /* 살짝 떠오르는 느낌 */
+}
+
+/* -------------------------------------------------------------------------- */
+/* 3. 할일 목록 (Task Board) */
+/* -------------------------------------------------------------------------- */
+#taskBoard {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+/* 개별 할일 항목 디자인 */
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  background-color: #e9f5e9; /* 매우 연한 녹색 배경 */
+  border: 2px solid #b7e0b5;
+  border-radius: 15px; /* 둥근 모서리 */
+  transition: background-color 0.3s;
+}
+
+.task > div:first-child {
+  /* 할일 내용 텍스트 */
+  font-size: 1.1em;
+  color: #4a6a3b;
+  word-break: break-all; /* 내용이 길어질 경우 줄바꿈 */
+}
+
+.task-done {
+  /* 완료된 할일 텍스트 */
+  color: #8b6e4d; /* 흐릿한 색상 */
+  text-decoration: line-through; /* 줄 긋기 */
+  opacity: 0.6; /* 투명하게 */
+}
+
+.task button {
+  /* 버튼 디자인: 체크/삭제 버튼 */
+  padding: 5px 10px;
+  margin-left: 5px;
+  border: 2px solid;
+  border-radius: 10px; /* 둥근 모양 */
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.task button:first-of-type {
+  /* 'check' 버튼 (완료) */
+  background-color: #a8c17b; /* 연한 초록 */
+  border-color: #6a8c43;
+  color: white;
+}
+
+.task button:first-of-type:hover {
+  background-color: #8c9c6f;
+}
+
+.task button:last-of-type {
+  /* 'delete' 버튼 (삭제) */
+  background-color: #f0e68c; /* 연한 노랑/개나리색 */
+  border-color: #c0b968;
+  color: #8b6e4d;
+}
+
+.task button:last-of-type:hover {
+  background-color: #e0d87a;
+}
+
+/* 마우스 커서 */
+#cursor-img {
+  position: fixed;
+  top: 100px;
+  left: 100px;
+  width: 70px;
+  height: 70px;
+  transition: transform 0.1s ease-out; /* 부드러운 움직임을 위한 트랜지션 효과 */
+  z-index: 9999;
+  pointer-events: none;
+}
+
+#cursor-img {
+  filter: drop-shadow(0 0 5px #439766);
+}

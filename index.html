@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style2.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <div id="container">
+        <h1>ToDo List</h1>
+        <section>
+          <label>오늘의 할일!</label>
+          <input
+            id="user"
+            onkeypress="if(event.keyCode == 13 && this.value.trim() !== ''){ addTask() }"
+          />
+          <button id="add">+</button>
+        </section>
+        <section>
+          <div id="taskBoard"></div>
+        </section>
+      </div>
+    </div>
+    <img id="cursor-img" src="/img/nugur1.png" alt="마우스 커서 이미지" />
+    <script src="custom2.js"></script>
+  </body>
+</html>
